@@ -134,7 +134,7 @@ export const ChartComponent = (props) => {
     chart.subscribeCrosshairMove((param) => {
       if (param.time) {
         const price = param.seriesPrices.get(newSeries);
-        firstRow.innerText = "JA CPI" + "  " + price.toFixed(2);
+        firstRow.innerText = `JA CPI" ${price.toFixed(2)}`;
       } else {
         firstRow.innerText = "JA CPI";
       }

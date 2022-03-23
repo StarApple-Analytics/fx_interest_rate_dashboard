@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 import { timeseriesFetcher } from "Common/fetchers";
 import Template from "Assets/RS.INF.01.xls";
 import { ChartComponent } from "./Components";
-import {fromUnixTime, format} from 'date-fns'
+import { fromUnixTime, format } from "date-fns";
 
 const Explore = () => {
   const { data: timeDataset, isLoading } = useQuery(
@@ -12,18 +12,11 @@ const Explore = () => {
     timeseriesFetcher.getData
   );
 
-  const [timeSeriesData, setTimeSeriesData] = useState([
-    { time: "2018-12-22", value: 32.51 },
-    { time: "2018-12-23", value: 31.11 },
-    { time: "2018-12-24", value: 27.02 },
-    { time: "2018-12-25", value: 27.32 },
-    { time: "2018-12-26", value: 25.17 },
-    { time: "2018-12-27", value: 28.89 },
-    { time: "2018-12-28", value: 25.46 },
-    { time: "2018-12-29", value: 23.92 },
-    { time: "2018-12-30", value: 22.68 },
-    { time: "2018-12-31", value: 22.67 },
-  ]);
+  const [monthlyTimeSeriesData, setMonthlyTimeSeriesData] = useState([]);
+  const [sixMonthlyTimeSeriesData, setSixMonthlyTimeSeriesData] = useState([]);
+  const [threeMonthlytimeSeriesData, setThreeMonthlyTimeSeriesData] = useState(
+    []
+  );
   const downloadTemplate = () => {
     var link = document.createElement("a");
     link.download = "RS.INF.01.xls";
@@ -33,13 +26,27 @@ const Explore = () => {
 
   useEffect(() => {
     if (!isLoading) {
-      const timestamps = timeDataset?.data?.date_ranges?.map((timestamp) => {
-        return {
-          time: format(fromUnixTime(timestamp[0]), "yyyy-MM-dd"),
-          value: timestamp[1],
-        };
+
+      const timeStamps = timeDataset?.data?.date_ranges?.map(
+        (timestamp, idx) => {
+          return {
+            time: format(fromUnixTime(timestamp[0]), "yyyy-MM-dd"),
+            value: timestamp[1],
+          };
+        }
+      );
+      const MonthlyTimestamps = timeStamps;
+      
+      const ThreeMonthlyTimestamps = timeStamps?.filter((_, idx) => {
+        return idx % 3
       });
-      setTimeSeriesData(timestamps)
+
+      const SixMonthlyTimestamps = timeStamps?.filter((_, idx) => {
+        return idx % 6;
+      });
+      setMonthlyTimeSeriesData(MonthlyTimestamps);
+      setThreeMonthlyTimeSeriesData(ThreeMonthlyTimestamps);
+      setSixMonthlyTimeSeriesData(SixMonthlyTimestamps);
     }
   }, [isLoading, timeDataset]);
 
@@ -64,7 +71,7 @@ const Explore = () => {
         </button>
       </div>
       <div className="w-full mt-36 h-4/5">
-        <ChartComponent data={timeSeriesData} />
+        <ChartComponent monthly={monthlyTimeSeriesData} threeMonthly={threeMonthlytimeSeriesData} sixMonthly={sixMonthlyTimeSeriesData} />
       </div>
     </div>
   );

@@ -139,11 +139,8 @@ export const ChartComponent = (props) => {
         firstRow.innerText = "JA CPI";
       }
       if (
-        !param.time ||
-        param.point.x < 0 ||
-        param.point.x > width ||
-        param.point.y < 0 ||
-        param.point.y > height
+        !param.time 
+       
       ) {
         toolTip.style.display = "none";
         return;

@@ -30,7 +30,7 @@ const Tutorial = () => {
         <div className="text-slate-800 font-semibold text-sm">
           Chart Features
         </div>
-        <ol className="relative border-l border-gray-200 dark:border-gray-700">
+        <ol className="relative border-l border-gray-200">
           <li className="mb-10 ml-9 flex flex-col gap-1">
             <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-slate-200 ">
               <RiZoomInFill className="w-3 h-3 text-blue-600" />

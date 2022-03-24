@@ -29,7 +29,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="w-1/6 h-screen sticky top-0 px-4 py-12 md:flex flex-col gap-16 bg-slate-800 drop-shadow-xl ring rounded-r-xl hidden lg:dlex">
+    <div className="w-1/6 h-screen sticky top-0 px-4 py-12 md:flex flex-col gap-16 bg-slate-800 drop-shadow-xl ring rounded-r-xl hidden lg:flex">
       <div className="flex flex-row gap-2 justify-center md:justify-start text-white items-center">
         <AiOutlineStock className="w-10 h-10 font-semibold" />
         <div className="font-semibold">

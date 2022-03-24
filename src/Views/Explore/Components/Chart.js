@@ -82,8 +82,8 @@ export const ChartComponent = (props) => {
         visible: true,
         fontSize: 32,
         horzAlign: "center",
-        vertAlign: "center",
-        color: "#67dda0",
+        vertAlign: "top",
+        color: "#131722",
         text: "Consumer Price Index (CPI)",
       },
       crosshair: {
@@ -106,7 +106,12 @@ export const ChartComponent = (props) => {
         chart.removeSeries(newSeries);
         newSeries = null;
       }
-      newSeries = chart.addAreaSeries({ crossHairMarkerVisible: true });
+      newSeries = chart.addAreaSeries({
+        crossHairMarkerVisible: true,
+        topColor: "rgba(33, 150, 243, 0.56)",
+        bottomColor: "rgba(33, 150, 243, 0.04)",
+        lineColor: "rgba(33, 150, 243, 1)",
+      });
 
       newSeries.setData(seriesesData.get(interval));
     }

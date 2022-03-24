@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, {  Fragment } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { AiFillPieChart } from "react-icons/ai";
 import { IoIosDocument } from "react-icons/io";
@@ -32,7 +32,7 @@ const NavModal = props => {
             {
               icon: IoIosDocument,
               path: "/tutorial",
-              title: "Tutorial",
+              title: "Get Started",
             },
           ],
         },

@@ -37,7 +37,7 @@ const Tutorial = () => {
             </span>
             <h3 className="mb-1 text-lg font-semibold text-gray-900">Zooming</h3>
             <time className="block mb-2 text-sm font-normal leading-none text-gray-600">
-              Detailed TimeSereis Data
+              Detailed TimeSeries Data
             </time>
             <p className="text-base font-normal text-gray-500 w-2/3">
               Using the mouse wheel you're able to zoom in and out on the chart,

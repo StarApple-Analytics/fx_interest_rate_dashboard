@@ -18,7 +18,7 @@ const Sidebar = () => {
     },
 
     {
-      section: "Docmentation",
+      section: "Documentation",
       routes: [
         {
           icon: IoIosDocument,

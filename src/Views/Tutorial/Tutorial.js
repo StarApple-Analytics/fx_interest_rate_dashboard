@@ -12,7 +12,7 @@ const Tutorial = () => {
         </div>
         <div className="text-gray-700 text-xl font-light w-2/3">
           The JA Inflation Tracker works by scraping the monthly Consumer Price
-          Index p-8m the Bank Of Jamaica (BOJ){" "}
+          Index from the Bank Of Jamaica (BOJ){" "}
           <span className="font-semibold text-slate-800">
             <a href="https://boj.org.jm/statistics/real-sector/inflation/">
               official website

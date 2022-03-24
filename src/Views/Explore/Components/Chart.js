@@ -75,12 +75,15 @@ export const ChartComponent = (props) => {
     const chart = createChart(chartContainerRef.current, {
       width: chartContainerRef.current.clientWidth,
       height: 300,
+      layout: {
+        backgroundColor: "#e2e8f0",
+      },
       watermark: {
         visible: true,
-        fontSize: 48,
+        fontSize: 32,
         horzAlign: "center",
         vertAlign: "center",
-        color: "#c2ead8",
+        color: "#67dda0",
         text: "Consumer Price Index (CPI)",
       },
       crosshair: {
@@ -192,7 +195,7 @@ export const ChartComponent = (props) => {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="relative" ref={chartContainerRef} />
+      <div className="relative " ref={chartContainerRef} />
       <div className="" ref={switcherContainer} />
     </div>
   );

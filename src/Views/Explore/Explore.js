@@ -51,13 +51,13 @@ const Explore = () => {
   }, [isLoading, timeDataset]);
 
   return (
-    <div className="grid grid-row gap-8 relative w-full ml-11 mt-3">
-      <div className="flex flex-row justify-between items-center">
+    <div className="flex flex-col justify-center gap-14 relative w-full p-8">
+      <div className="flex flex-row justify-between items-center w-full">
         <div className="flex flex-col gap-2">
-          <div className="col-span-full text-md font-semibold text-gray-500">
+          <div className="col-span-full text-md font-semibold text-gray-800">
             Inflation Tracker
           </div>
-          <div className="col-span-full text-sm font-light text-gray-600">
+          <div className="col-span-full text-xs md:text-sm lg:text-sm font-light text-gray-600">
             Monitoring Jamaica's Monthly Inflation Rate
           </div>
         </div>
@@ -71,7 +71,11 @@ const Explore = () => {
         </button>
       </div>
       <div className="w-full mt-36 h-4/5">
-        <ChartComponent monthly={monthlyTimeSeriesData} threeMonthly={threeMonthlytimeSeriesData} sixMonthly={sixMonthlyTimeSeriesData} />
+        <ChartComponent
+          monthly={monthlyTimeSeriesData}
+          threeMonthly={threeMonthlytimeSeriesData}
+          sixMonthly={sixMonthlyTimeSeriesData}
+        />
       </div>
     </div>
   );

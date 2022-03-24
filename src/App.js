@@ -1,7 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import Routes from "./Routes";
 import { QueryClientProvider, QueryClient } from "react-query";
-
 import browserHistory from "Common/history";
 import {
   Chart,
